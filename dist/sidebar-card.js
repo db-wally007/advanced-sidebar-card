@@ -409,15 +409,20 @@ s.defineLocale("zh-cn",{months:"一月_二月_三月_四月_五月_六月_七月
 //! moment.js locale configuration
 s.defineLocale("zh-hk",{months:"一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月".split("_"),monthsShort:"1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月".split("_"),weekdays:"星期日_星期一_星期二_星期三_星期四_星期五_星期六".split("_"),weekdaysShort:"週日_週一_週二_週三_週四_週五_週六".split("_"),weekdaysMin:"日_一_二_三_四_五_六".split("_"),longDateFormat:{LT:"HH:mm",LTS:"HH:mm:ss",L:"YYYY/MM/DD",LL:"YYYY年M月D日",LLL:"YYYY年M月D日 HH:mm",LLLL:"YYYY年M月D日dddd HH:mm",l:"YYYY/M/D",ll:"YYYY年M月D日",lll:"YYYY年M月D日 HH:mm",llll:"YYYY年M月D日dddd HH:mm"},meridiemParse:/凌晨|早上|上午|中午|下午|晚上/,meridiemHour:function(e,t){return 12===e&&(e=0),"凌晨"===t||"早上"===t||"上午"===t?e:"中午"===t?e>=11?e:e+12:"下午"===t||"晚上"===t?e+12:void 0},meridiem:function(e,t,a){var s=100*e+t;return s<600?"凌晨":s<900?"早上":s<1130?"上午":s<1230?"中午":s<1800?"下午":"晚上"},calendar:{sameDay:"[今天]LT",nextDay:"[明天]LT",nextWeek:"[下]ddddLT",lastDay:"[昨天]LT",lastWeek:"[上]ddddLT",sameElse:"L"},dayOfMonthOrdinalParse:/\d{1,2}(日|月|週)/,ordinal:function(e,t){switch(t){case"d":case"D":case"DDD":return e+"日";case"M":return e+"月";case"w":case"W":return e+"週";default:return e}},relativeTime:{future:"%s內",past:"%s前",s:"幾秒",ss:"%d 秒",m:"1 分鐘",mm:"%d 分鐘",h:"1 小時",hh:"%d 小時",d:"1 天",dd:"%d 天",M:"1 個月",MM:"%d 個月",y:"1 年",yy:"%d 年"}}),
 //! moment.js locale configuration
-s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月".split("_"),monthsShort:"1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月".split("_"),weekdays:"星期日_星期一_星期二_星期三_星期四_星期五_星期六".split("_"),weekdaysShort:"週日_週一_週二_週三_週四_週五_週六".split("_"),weekdaysMin:"日_一_二_三_四_五_六".split("_"),longDateFormat:{LT:"HH:mm",LTS:"HH:mm:ss",L:"YYYY/MM/DD",LL:"YYYY年M月D日",LLL:"YYYY年M月D日 HH:mm",LLLL:"YYYY年M月D日dddd HH:mm",l:"YYYY/M/D",ll:"YYYY年M月D日",lll:"YYYY年M月D日 HH:mm",llll:"YYYY年M月D日dddd HH:mm"},meridiemParse:/凌晨|早上|上午|中午|下午|晚上/,meridiemHour:function(e,t){return 12===e&&(e=0),"凌晨"===t||"早上"===t||"上午"===t?e:"中午"===t?e>=11?e:e+12:"下午"===t||"晚上"===t?e+12:void 0},meridiem:function(e,t,a){var s=100*e+t;return s<600?"凌晨":s<900?"早上":s<1130?"上午":s<1230?"中午":s<1800?"下午":"晚上"},calendar:{sameDay:"[今天] LT",nextDay:"[明天] LT",nextWeek:"[下]dddd LT",lastDay:"[昨天] LT",lastWeek:"[上]dddd LT",sameElse:"L"},dayOfMonthOrdinalParse:/\d{1,2}(日|月|週)/,ordinal:function(e,t){switch(t){case"d":case"D":case"DDD":return e+"日";case"M":return e+"月";case"w":case"W":return e+"週";default:return e}},relativeTime:{future:"%s內",past:"%s前",s:"幾秒",ss:"%d 秒",m:"1 分鐘",mm:"%d 分鐘",h:"1 小時",hh:"%d 小時",d:"1 天",dd:"%d 天",M:"1 個月",MM:"%d 個月",y:"1 年",yy:"%d 年"}}),s.locale("en"),s}()},ue(he={exports:{}},he.exports),he.exports);(Le=ce||(ce={})).language="language",Le.system="system",Le.comma_decimal="comma_decimal",Le.decimal_comma="decimal_comma",Le.space_comma="space_comma",Le.none="none",function(e){e.language="language",e.system="system",e.am_pm="12",e.twenty_four="24"}(Me||(Me={}));var pe=["closed","locked","off"],Ye=function(e,t,a,s){s=s||{},a=null==a?{}:a;var n=new Event(t,{bubbles:void 0===s.bubbles||s.bubbles,cancelable:Boolean(s.cancelable),composed:void 0===s.composed||s.composed});return n.detail=a,e.dispatchEvent(n),n},fe=function(e){Ye(window,"haptic",e)};const ke="SIDEBAR-CARD";function ge(e,t){let a=25,s=75,n=!1,r=Se();e.width&&("number"==typeof e.width?(a=e.width,s=100-a):"object"==typeof e.width&&(a=e.desktop,s=100-a,n=!0));let i="\n    #customSidebarWrapper { \n      display:flex;\n      flex-direction:row;\n      overflow:hidden;\n    }\n    #customSidebar.hide {\n      display:none!important;\n      width:0!important;\n    }\n    #view.hideSidebar {\n      width:100%!important;\n    }\n  ";return n?t<=e.breakpoints.mobile?0==e.width.mobile?i+="\n          #customSidebar {\n            width:"+e.width.mobile+`%;\n            overflow:hidden;\n            display:none;\n            ${e.hideTopMenu?"":"margin-top: calc("+r+" + env(safe-area-inset-top));"}\n          } \n          #view {\n            width:`+(100-e.width.mobile)+`%;\n          ${e.hideTopMenu?"padding-top:0!important;margin-top:0!important;":""}\n          }\n        `:i+="\n          #customSidebar {\n            width:"+e.width.mobile+`%;\n            overflow:hidden;\n            ${e.hideTopMenu?"":"margin-top: calc("+r+" + env(safe-area-inset-top));"}\n          } \n          #view {\n            width:`+(100-e.width.mobile)+`%;\n          ${e.hideTopMenu?"padding-top:0!important;margin-top:0!important;":""}\n          }\n        `:t<=e.breakpoints.tablet?0==e.width.tablet?i+="\n          #customSidebar {\n            width:"+e.width.tablet+`%;\n            overflow:hidden;\n            display:none;\n            ${e.hideTopMenu?"":"margin-top: calc("+r+" + env(safe-area-inset-top));"}\n          } \n          #view {\n            width:`+(100-e.width.tablet)+`%;\n          ${e.hideTopMenu?"padding-top:0!important;margin-top:0!important;":""}\n          }\n        `:i+="\n          #customSidebar {\n            width:"+e.width.tablet+`%;\n            overflow:hidden;\n            ${e.hideTopMenu?"":"margin-top: calc("+r+" + env(safe-area-inset-top));"}\n          } \n          #view {\n            width:`+(100-e.width.tablet)+`%;\n          ${e.hideTopMenu?"padding-top:0!important;margin-top:0!important;":""}\n          }\n        `:0==e.width.tablet?i+="\n          #customSidebar {\n            width:"+e.width.desktop+`%;\n            overflow:hidden;\n            display:none;\n            ${e.hideTopMenu?"":"margin-top: calc("+r+" + env(safe-area-inset-top));"}\n          } \n          #view {\n            width:`+(100-e.width.desktop)+`%;\n          ${e.hideTopMenu?"padding-top:0!important;margin-top:0!important;":""}\n          }\n        `:i+="\n          #customSidebar {\n            width:"+e.width.desktop+`%;\n            overflow:hidden;\n            ${e.hideTopMenu?"":"margin-top: calc("+r+" + env(safe-area-inset-top));"}\n          } \n          #view {\n            width:`+(100-e.width.desktop)+`%;\n          ${e.hideTopMenu?"padding-top:0!important;margin-top:0!important;":""}\n          }\n        `:i+="\n      #customSidebar {\n        width:"+a+`%;\n        overflow:hidden;\n        ${e.hideTopMenu?"":"margin-top: calc("+r+" + env(safe-area-inset-top));"}\n      } \n      #view {\n        width:`+s+`%;\n      ${e.hideTopMenu?"padding-top:0!important;margin-top:0!important;":""}\n      }\n    `,i}function De(){let e=document.querySelector("home-assistant");if(e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer partial-panel-resolver"),e=e&&e.shadowRoot||e,e=e&&e.querySelector("ha-panel-lovelace"),e=e&&e.shadowRoot,e=e&&e.querySelector("hui-root"),e){const t=e.lovelace;return t.current_view=e.___curView,t}return null}async function we(e,t,a){const s=await je();if(s.config.sidebar){!0===Object.assign({},s.config.sidebar).debug&&console.info(`%c${ke}: %c ${e.padEnd(24)} -> %c ${t}`,"color: chartreuse; background: black; font-weight: 700;","color: yellow; background: black; font-weight: 700;","",a)}}async function Te(e,t,a){const s=await je();if(s.config.sidebar){!0===Object.assign({},s.config.sidebar).debug&&console.error(`%c${ke}: %c ${e.padEnd(24)} -> %c ${t}`,"color: red; background: black; font-weight: 700;","color: white; background: black; font-weight: 700;","color:red",a)}}function ve(){let e=document.querySelector("home-assistant");return e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer partial-panel-resolver"),e=e&&e.shadowRoot||e,e=e&&e.querySelector("ha-panel-lovelace"),e=e&&e.shadowRoot,e=e&&e.querySelector("hui-root"),e}function Se(){let e="0px";const t=ve();if(!t||!t.shadowRoot)return e;const a=t.shadowRoot.getElementById("view");return void 0!==a&&void 0!==window.getComputedStyle(a)&&(e=window.getComputedStyle(a).paddingTop),e}function be(e,t=window.location.href){const a=e.replace(/[\[\]]/g,"\\$&"),s=new RegExp("[?&]"+a+"(=([^&#]*)|&|#|$)").exec(t);return s?s[2]?decodeURIComponent(s[2].replace(/\+/g," ")):"":null}function He(e,t){const a=document.body.clientWidth;e.querySelector("#customSidebarStyle").textContent=ge(t,a);const s=ve(),n=s.shadowRoot.querySelector(".header");we("updateStyling",n?"Home Assistant header found!":"Home Assistant header not found!");const r=s.shadowRoot.querySelector("ch-footer");we("updateStyling",r?"Home Assistant footer found!":"Home Assistant footer not found!");const i=be("sidebarOff"),d=s.shadowRoot.getElementById("view");let o=Se();t.hideTopMenu&&!0===t.hideTopMenu&&t.showTopMenuOnMobile&&!0===t.showTopMenuOnMobile&&a<=t.breakpoints.mobile&&null==i?(n&&(we("updateStyling","Action: Show Home Assistant header!"),n.style.display="block"),d&&(d.style.minHeight="calc(100vh - "+o+")"),r&&(we("updateStyling","Action: Show Home Assistant footer!"),r.style.display="flex")):t.hideTopMenu&&!0===t.hideTopMenu&&null==i&&(n&&(we("updateStyling","Action: Hide Home Assistant header!"),n.style.display="none"),r&&(we("updateStyling","Action: Hide Home Assistant footer!"),r.style.display="none"),d&&(d.style.minHeight="calc(100vh)"))}function xe(e){return new Promise(t=>setTimeout(t,e))}async function je(){let e;for(;!e;)e=De(),e||await xe(500);return e}async function Pe(){const e=await je();if(e.config.sidebar){const t=Object.assign({},e.config.sidebar);if(!t.width||t.width&&"number"==typeof t.width&&t.width>0&&t.width<100||t.width&&"object"==typeof t.width){const e=ve(),a=function(){let e=document.querySelector("home-assistant");return e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer ha-sidebar"),e}(),s=function(){let e=document.querySelector("home-assistant");return e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer"),e=e&&e.shadowRoot,e=e&&e.querySelector(".mdc-drawer-app-content"),e}(),n=function(){let e=document.querySelector("home-assistant");return e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer"),e=e&&e.shadowRoot,e=e&&e.querySelector(".mdc-drawer"),e}(),r=be("sidebarOff");if(!e||!e.shadowRoot)return void Te("buildSidebar","Root element or shadowRoot not found!");t.hideTopMenu&&!0===t.hideTopMenu&&null==r&&(e.shadowRoot.querySelector("ch-header")&&(e.shadowRoot.querySelector("ch-header").style.display="none"),e.shadowRoot.querySelector("app-header")&&(e.shadowRoot.querySelector("app-header").style.display="none"),e.shadowRoot.querySelector("ch-footer")&&(e.shadowRoot.querySelector("ch-footer").style.display="none"),e.shadowRoot.getElementById("view")&&(e.shadowRoot.getElementById("view").style.minHeight="calc(100vh)")),t.hideHassSidebar&&!0===t.hideHassSidebar&&null==r&&(a&&(a.style.display="none"),s&&(s.style.marginLeft="0",s.style.paddingLeft="0"),n&&(n.style.display="none")),t.breakpoints?t.breakpoints&&(t.breakpoints.mobile||(t.breakpoints.mobile=768),t.breakpoints.tablet||(t.breakpoints.tablet=1024)):t.breakpoints={tablet:1024,mobile:768};let i=e.shadowRoot.querySelector("div"),d=ge(t,document.body.clientWidth),o=document.createElement("style");o.setAttribute("id","customSidebarStyle"),i.appendChild(o),o.type="text/css",o.styleSheet?o.styleSheet.cssText=d:o.appendChild(document.createTextNode(d));let _=i.querySelector("#view");const l=document.createElement("div");l.setAttribute("id","customSidebarWrapper"),_.parentNode.insertBefore(l,_);let m=document.createElement("div");m.setAttribute("id","customSidebar"),l.appendChild(m),l.appendChild(_),await async function(e,t){const a=document.createElement("sidebar-card");a.setConfig(t),a.hass=te(),e.appendChild(a)}(m,t),function(e,t,a,s){window.addEventListener("resize",function(){He(e,t)},!0),"hideOnPath"in t&&(window.addEventListener("location-changed",()=>{t.hideOnPath.includes(window.location.pathname)?(a.classList.add("hideSidebar"),s.classList.add("hide")):(a.classList.remove("hideSidebar"),s.classList.remove("hide"))}),t.hideOnPath.includes(window.location.pathname)&&(we("subscribeEvents","Disable sidebar for this path"),a.classList.add("hideSidebar"),s.classList.add("hide")))}(i,t,_,m),setTimeout(function(){He(i,t)},1)}else Te("buildSidebar","Error sidebar in width config!")}else we("buildSidebar","No sidebar in config found!")}customElements.define("sidebar-card",class extends ee{constructor(){super(),this.templateLines=[],this.clock=!1,this.updateMenu=!0,this.digitalClock=!1,this.twelveHourVersion=!1,this.digitalClockWithSeconds=!1,this.period=!1,this.date=!1,this.dateFormat="DD MMMM",this.bottomCard=null,this.CUSTOM_TYPE_PREFIX="custom:",this._clockInterval=null,this._dateInterval=null,this._boundLocationChange=()=>{setTimeout(()=>this._updateActiveMenu(),50)}}static get properties(){return{hass:{},config:{},active:{}}}connectedCallback(){super.connectedCallback(),window.addEventListener("location-changed",this._boundLocationChange);const e=this;if((this.config.clock||this.config.digitalClock)&&!this._clockInterval){const t=1e3;setTimeout(()=>e._runClock(),50),this._clockInterval=setInterval(function(){e._runClock()},t)}if(this.config.date&&!this._dateInterval){const t=36e5;setTimeout(()=>e._runDate(),50),this._dateInterval=setInterval(function(){e._runDate()},t)}this._updateActiveMenu()}render(){const e=this.config.sidebarMenu,t="title"in this.config&&this.config.title,a="style"in this.config;return this.clock=!!this.config.clock&&this.config.clock,this.digitalClock=!!this.config.digitalClock&&this.config.digitalClock,this.digitalClockWithSeconds=!!this.config.digitalClockWithSeconds&&this.config.digitalClockWithSeconds,this.twelveHourVersion=!!this.config.twelveHourVersion&&this.config.twelveHourVersion,this.period=!!this.config.period&&this.config.period,this.date=!!this.config.date&&this.config.date,this.dateFormat=this.config.dateFormat?this.config.dateFormat:"DD MMMM",this.bottomCard=this.config.bottomCard?this.config.bottomCard:null,this.updateMenu=!this.config.hasOwnProperty("updateMenu")||this.config.updateMenu,F`
+s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月_八月_九月_十月_十一月_十二月".split("_"),monthsShort:"1月_2月_3月_4月_5月_6月_7月_8月_9月_10月_11月_12月".split("_"),weekdays:"星期日_星期一_星期二_星期三_星期四_星期五_星期六".split("_"),weekdaysShort:"週日_週一_週二_週三_週四_週五_週六".split("_"),weekdaysMin:"日_一_二_三_四_五_六".split("_"),longDateFormat:{LT:"HH:mm",LTS:"HH:mm:ss",L:"YYYY/MM/DD",LL:"YYYY年M月D日",LLL:"YYYY年M月D日 HH:mm",LLLL:"YYYY年M月D日dddd HH:mm",l:"YYYY/M/D",ll:"YYYY年M月D日",lll:"YYYY年M月D日 HH:mm",llll:"YYYY年M月D日dddd HH:mm"},meridiemParse:/凌晨|早上|上午|中午|下午|晚上/,meridiemHour:function(e,t){return 12===e&&(e=0),"凌晨"===t||"早上"===t||"上午"===t?e:"中午"===t?e>=11?e:e+12:"下午"===t||"晚上"===t?e+12:void 0},meridiem:function(e,t,a){var s=100*e+t;return s<600?"凌晨":s<900?"早上":s<1130?"上午":s<1230?"中午":s<1800?"下午":"晚上"},calendar:{sameDay:"[今天] LT",nextDay:"[明天] LT",nextWeek:"[下]dddd LT",lastDay:"[昨天] LT",lastWeek:"[上]dddd LT",sameElse:"L"},dayOfMonthOrdinalParse:/\d{1,2}(日|月|週)/,ordinal:function(e,t){switch(t){case"d":case"D":case"DDD":return e+"日";case"M":return e+"月";case"w":case"W":return e+"週";default:return e}},relativeTime:{future:"%s內",past:"%s前",s:"幾秒",ss:"%d 秒",m:"1 分鐘",mm:"%d 分鐘",h:"1 小時",hh:"%d 小時",d:"1 天",dd:"%d 天",M:"1 個月",MM:"%d 個月",y:"1 年",yy:"%d 年"}}),s.locale("en"),s}()},ue(he={exports:{}},he.exports),he.exports);(Le=ce||(ce={})).language="language",Le.system="system",Le.comma_decimal="comma_decimal",Le.decimal_comma="decimal_comma",Le.space_comma="space_comma",Le.none="none",function(e){e.language="language",e.system="system",e.am_pm="12",e.twenty_four="24"}(Me||(Me={}));var pe=["closed","locked","off"],Ye=function(e,t,a,s){s=s||{},a=null==a?{}:a;var n=new Event(t,{bubbles:void 0===s.bubbles||s.bubbles,cancelable:Boolean(s.cancelable),composed:void 0===s.composed||s.composed});return n.detail=a,e.dispatchEvent(n),n},fe=function(e){Ye(window,"haptic",e)};const ke="SIDEBAR-CARD";function ge(e,t){let r=Se();let i="\n    #customSidebarWrapper { \n      display:flex;\n      flex-direction:row;\n      overflow:hidden;\n      height:100vh;\n    }\n    #customSidebar.hide {\n      display:none!important;\n      width:0!important;\n    }\n    #view.hideSidebar {\n      width:100%!important;\n    }\n  ";const mob=e.width&&"object"==typeof e.width?e.width.mobile:0;const bp=e.breakpoints||{mobile:768,tablet:1024};if(t<=bp.mobile&&0==mob){i+="\n      #customSidebar {\n        width:0;\n        overflow:hidden;\n        display:none;\n      }\n      #view {\n        width:100%;\n        overflow-y:auto;\n        overscroll-behavior-y:contain;\n      "+(e.hideTopMenu?"padding-top:0!important;margin-top:0!important;":"")+"\n      }\n    "}else{i+="\n      #customSidebar {\n        width:260px;\n        min-width:260px;\n        max-width:260px;\n        overflow:hidden;\n        "+(e.hideTopMenu?"":"margin-top: calc("+r+" + env(safe-area-inset-top));")+"\n      }\n      #view {\n        width:calc(100% - 260px);\n        overflow-y:auto;\n        overscroll-behavior-y:contain;\n      "+(e.hideTopMenu?"padding-top:0!important;margin-top:0!important;":"")+"\n      }\n    "}return i}function De(){let e=document.querySelector("home-assistant");if(e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer partial-panel-resolver"),e=e&&e.shadowRoot||e,e=e&&e.querySelector("ha-panel-lovelace"),e=e&&e.shadowRoot,e=e&&e.querySelector("hui-root"),e){const t=e.lovelace;return t.current_view=e.___curView,t}return null}async function we(e,t,a){const s=await je();if(s.config.sidebar){!0===Object.assign({},s.config.sidebar).debug&&console.info(`%c${ke}: %c ${e.padEnd(24)} -> %c ${t}`,"color: chartreuse; background: black; font-weight: 700;","color: yellow; background: black; font-weight: 700;","",a)}}async function Te(e,t,a){const s=await je();if(s.config.sidebar){!0===Object.assign({},s.config.sidebar).debug&&console.error(`%c${ke}: %c ${e.padEnd(24)} -> %c ${t}`,"color: red; background: black; font-weight: 700;","color: white; background: black; font-weight: 700;","color:red",a)}}function ve(){let e=document.querySelector("home-assistant");return e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer partial-panel-resolver"),e=e&&e.shadowRoot||e,e=e&&e.querySelector("ha-panel-lovelace"),e=e&&e.shadowRoot,e=e&&e.querySelector("hui-root"),e}function Se(){let e="0px";const t=ve();if(!t||!t.shadowRoot)return e;const a=t.shadowRoot.getElementById("view");return void 0!==a&&void 0!==window.getComputedStyle(a)&&(e=window.getComputedStyle(a).paddingTop),e}function be(e,t=window.location.href){const a=e.replace(/[\[\]]/g,"\\$&"),s=new RegExp("[?&]"+a+"(=([^&#]*)|&|#|$)").exec(t);return s?s[2]?decodeURIComponent(s[2].replace(/\+/g," ")):"":null}function He(e,t){const a=document.body.clientWidth;e.querySelector("#customSidebarStyle").textContent=ge(t,a);const s=ve(),n=s.shadowRoot.querySelector(".header");we("updateStyling",n?"Home Assistant header found!":"Home Assistant header not found!");const r=s.shadowRoot.querySelector("ch-footer");we("updateStyling",r?"Home Assistant footer found!":"Home Assistant footer not found!");const i=be("sidebarOff"),d=s.shadowRoot.getElementById("view");let o=Se();t.hideTopMenu&&!0===t.hideTopMenu&&t.showTopMenuOnMobile&&!0===t.showTopMenuOnMobile&&a<=t.breakpoints.mobile&&null==i?(n&&(we("updateStyling","Action: Show Home Assistant header!"),n.style.display="block"),d&&(d.style.minHeight="calc(100vh - "+o+")"),r&&(we("updateStyling","Action: Show Home Assistant footer!"),r.style.display="flex")):t.hideTopMenu&&!0===t.hideTopMenu&&null==i&&(n&&(we("updateStyling","Action: Hide Home Assistant header!"),n.style.display="none"),r&&(we("updateStyling","Action: Hide Home Assistant footer!"),r.style.display="none"),d&&(d.style.minHeight="calc(100vh)"))}function xe(e){return new Promise(t=>setTimeout(t,e))}async function je(){let e;for(;!e;)e=De(),e||await xe(500);return e}async function Pe(){const e=await je();if(e.config.sidebar){const t=Object.assign({},e.config.sidebar);if(!t.width||t.width&&"number"==typeof t.width&&t.width>0&&t.width<100||t.width&&"object"==typeof t.width){const e=ve(),a=function(){let e=document.querySelector("home-assistant");return e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer ha-sidebar"),e}(),s=function(){let e=document.querySelector("home-assistant");return e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer"),e=e&&e.shadowRoot,e=e&&e.querySelector(".mdc-drawer-app-content"),e}(),n=function(){let e=document.querySelector("home-assistant");return e=e&&e.shadowRoot,e=e&&e.querySelector("home-assistant-main"),e=e&&e.shadowRoot,e=e&&e.querySelector("ha-drawer"),e=e&&e.shadowRoot,e=e&&e.querySelector(".mdc-drawer"),e}(),r=be("sidebarOff");if(!e||!e.shadowRoot)return void Te("buildSidebar","Root element or shadowRoot not found!");t.hideTopMenu&&!0===t.hideTopMenu&&null==r&&(e.shadowRoot.querySelector("ch-header")&&(e.shadowRoot.querySelector("ch-header").style.display="none"),e.shadowRoot.querySelector("app-header")&&(e.shadowRoot.querySelector("app-header").style.display="none"),e.shadowRoot.querySelector("ch-footer")&&(e.shadowRoot.querySelector("ch-footer").style.display="none"),e.shadowRoot.getElementById("view")&&(e.shadowRoot.getElementById("view").style.minHeight="calc(100vh)")),t.hideHassSidebar&&!0===t.hideHassSidebar&&null==r&&(a&&(a.style.display="none"),s&&(s.style.marginLeft="0",s.style.paddingLeft="0"),n&&(n.style.display="none")),t.breakpoints?t.breakpoints&&(t.breakpoints.mobile||(t.breakpoints.mobile=768),t.breakpoints.tablet||(t.breakpoints.tablet=1024)):t.breakpoints={tablet:1024,mobile:768};let i=e.shadowRoot.querySelector("div"),d=ge(t,document.body.clientWidth),o=document.createElement("style");o.setAttribute("id","customSidebarStyle"),i.appendChild(o),o.type="text/css",o.styleSheet?o.styleSheet.cssText=d:o.appendChild(document.createTextNode(d));let _=i.querySelector("#view");const l=document.createElement("div");l.setAttribute("id","customSidebarWrapper"),_.parentNode.insertBefore(l,_);let m=document.createElement("div");m.setAttribute("id","customSidebar"),l.appendChild(m),l.appendChild(_),await async function(e,t){const a=document.createElement("sidebar-card");a.setConfig(t),a.hass=te(),e.appendChild(a)}(m,t),function(e,t,a,s){window.addEventListener("resize",function(){He(e,t)},!0),"hideOnPath"in t&&(window.addEventListener("location-changed",()=>{t.hideOnPath.includes(window.location.pathname)?(a.classList.add("hideSidebar"),s.classList.add("hide")):(a.classList.remove("hideSidebar"),s.classList.remove("hide"))}),t.hideOnPath.includes(window.location.pathname)&&(we("subscribeEvents","Disable sidebar for this path"),a.classList.add("hideSidebar"),s.classList.add("hide")))}(i,t,_,m),setTimeout(function(){He(i,t)},1)}else Te("buildSidebar","Error sidebar in width config!")}else we("buildSidebar","No sidebar in config found!")}customElements.define("sidebar-card",class extends ee{constructor(){super(),this.templateLines=[],this.clock=!1,this.updateMenu=!0,this.digitalClock=!1,this.twelveHourVersion=!1,this.digitalClockWithSeconds=!1,this.period=!1,this.date=!1,this.dateFormat="DD MMMM",this.bottomCard=null,this.hassClock=!0,this.CUSTOM_TYPE_PREFIX="custom:",this._clockInterval=null,this._dateInterval=null,this._boundLocationChange=()=>{setTimeout(()=>this._updateActiveMenu(),50)}}static get properties(){return{hass:{},config:{},active:{}}}connectedCallback(){super.connectedCallback(),window.addEventListener("location-changed",this._boundLocationChange);const e=this;if(!this.config.hassClock&&(this.config.clock||this.config.digitalClock)&&!this._clockInterval){const t=1e3;setTimeout(()=>e._runClock(),50),this._clockInterval=setInterval(function(){e._runClock()},t)}if(this.config.date&&!this._dateInterval){const t=36e5;setTimeout(()=>e._runDate(),50),this._dateInterval=setInterval(function(){e._runDate()},t)}this._updateActiveMenu()}render(){const e=this.config.sidebarMenu,t="title"in this.config&&this.config.title,a="style"in this.config;return this.clock=!!this.config.clock&&this.config.clock,this.digitalClock=!!this.config.digitalClock&&this.config.digitalClock,this.digitalClockWithSeconds=!!this.config.digitalClockWithSeconds&&this.config.digitalClockWithSeconds,this.twelveHourVersion=!!this.config.twelveHourVersion&&this.config.twelveHourVersion,this.period=!!this.config.period&&this.config.period,this.date=this.config.hasOwnProperty("date")?!!this.config.date:!0,this.dateFormat=this.config.dateFormat?this.config.dateFormat:"dddd, Do [of] MMMM",this.bottomCard=this.config.bottomCard?this.config.bottomCard:null,this.hassClock=this.config.hasOwnProperty("hassClock")?!!this.config.hassClock:!0,this.updateMenu=!this.config.hasOwnProperty("updateMenu")||this.config.updateMenu,F`
       ${a?F`
             <style>
               ${this.config.style}
             </style>
           `:F``}
 
-      <div class="sidebar-inner">
-        ${this.digitalClock?F`
+      <div class="sidebar-inner${this.hassClock?' loading':''}">
+        ${this.hassClock?F`
+              <div class="hassClockSlot"></div>
+              ${this.date?F`
+                <h2 class="date"></h2>
+              `:F``}
+            `:F`${this.digitalClock?F`
               <h1 class="digitalClock${t?" with-title":""}${this.digitalClockWithSeconds?" with-seconds":""}"></h1>
             `:F``}
         ${this.clock?F`
@@ -435,7 +440,7 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
             `:F``}
         ${this.date?F`
               <h2 class="date"></h2>
-            `:F``}
+            `:F``}`}
         ${e&&e.length>0?F`
               <ul class="sidebarMenu">
                 ${e.map(e=>F`
@@ -459,73 +464,116 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
               <div class="bottom"></div>
             `:F``}
       </div>
-    `}_runClock(){let e,t;const a=new Date;let s=a.getHours().toString();const n=a.getHours(),r=(n+11)%12+1,i=a.getMinutes(),d=a.getSeconds(),o=Math.floor((60*r+i)/2),_=6*i,l=6*d;if(this.clock&&(this.shadowRoot.querySelector(".hour").style.transform=`rotate(${o}deg)`,this.shadowRoot.querySelector(".minute").style.transform=`rotate(${_}deg)`,this.shadowRoot.querySelector(".second").style.transform=`rotate(${l}deg)`),this.digitalClock&&!this.twelveHourVersion){const e=i.toString();if(t=s.length<2?"0"+s+":":s+":",this.digitalClockWithSeconds){t+=e.length<2?"0"+e+":":e+":";const a=d.toString();t+=a.length<2?"0"+a:a}else t+=e.length<2?"0"+e:e;this.shadowRoot.querySelector(".digitalClock").textContent=t}else if(this.digitalClock&&this.twelveHourVersion&&!this.period){e=a.getHours(),e%=12,e=e||12,s=e.toString();const n=i.toString();if(t=s.length<2?"0"+s+":":s+":",this.digitalClockWithSeconds){t+=n.length<2?"0"+n+":":n+":";const e=d.toString();t+=e.length<2?"0"+e:e}else t+=n.length<2?"0"+n:n;this.shadowRoot.querySelector(".digitalClock").textContent=t}else if(this.digitalClock&&this.twelveHourVersion&&this.period){var m=n>=12?"pm":"am";e=a.getHours(),e%=12,e=e||12,s=e.toString();const r=i.toString();if(t=s.length<2?"0"+s+":":s+":",this.digitalClockWithSeconds){t+=r.length<2?"0"+r+":":r+":";const e=d.toString();t+=e.length<2?"0"+e:e}else t+=r.length<2?"0"+r:r;t+=" "+m,this.shadowRoot.querySelector(".digitalClock").textContent=t}}_runDate(){const e=ye();e.locale(this.hass.language),this.shadowRoot.querySelector(".date").textContent=e.format(this.dateFormat)}updateSidebarSize(e){const t=this.shadowRoot.querySelector(".sidebar-inner");e.shadowRoot.querySelector("ch-header")||e.shadowRoot.querySelector("app-header"),be("sidebarOff");let a=Se();t&&(t.style.width=this.offsetWidth+"px",this.config.hideTopMenu?(t.style.height=`${window.innerHeight}px`,t.style.top="0px"):(t.style.height=`calc(${window.innerHeight}px - `+a+")",t.style.top=a))}firstUpdated(){ae(this);let e=ve();const t=this;setTimeout(()=>{t.updateSidebarSize(e),t._updateActiveMenu()},50),setTimeout(()=>{t.updateSidebarSize(e)},350),window.addEventListener("resize",function(){setTimeout(()=>{t.updateSidebarSize(e)},1)},!0),this.bottomCard&&setTimeout(()=>{var e={type:this.bottomCard.type};if(we("firstUpdated","Bottom card: ",e=Object.assign({},e,this.bottomCard.cardOptions)),e&&"object"==typeof e&&e.type){let t=e.type;t=t.startsWith(this.CUSTOM_TYPE_PREFIX)?t.substr(this.CUSTOM_TYPE_PREFIX.length):`hui-${t}-card`;const a=document.createElement(t);if(a.setConfig(e),a.hass=te(),this.shadowRoot.querySelector(".bottom").appendChild(a),ae(a),this.bottomCard.cardStyle&&""!=this.bottomCard.cardStyle){let e=this.bottomCard.cardStyle,t=0,s=setInterval(function(){if(a&&a.shadowRoot){window.clearInterval(s);var n=document.createElement("style");n.innerHTML=e,a.shadowRoot.appendChild(n)}else 10===++t&&window.clearInterval(s)},100)}}else Te("firstUpdated","Bottom card config error!")},2)}_updateActiveMenu(){if(this.updateMenu){this.shadowRoot.querySelectorAll('ul.sidebarMenu li[data-type="navigate"]').forEach(e=>{e.classList.remove("active")});let e=this.shadowRoot.querySelector('ul.sidebarMenu li[data-path="'+document.location.pathname+'"]');e&&e.classList.add("active")}}_menuAction(e){if(e.target.dataset&&e.target.dataset.menuitem||e.target.parentNode.dataset&&e.target.parentNode.dataset.menuitem){const t=JSON.parse(e.target.dataset.menuitem||e.target.parentNode.dataset.menuitem);this._customAction(t)}}_customAction(e){switch(e.action){case"more-info":(e.entity||e.camera_image)&&re(e.entity?e.entity:e.camera_image);break;case"navigate":e.navigation_path&&function(e,t,a){void 0===a&&(a=!1),a?history.replaceState(null,"",t):history.pushState(null,"",t),Ye(window,"location-changed",{replace:a})}(window,e.navigation_path);break;case"url":e.url_path&&window.open(e.url_path);break;case"toggle":e.entity&&(!function(e,t){(function(e,t,a){void 0===a&&(a=!0);var s,n=function(e){return e.substr(0,e.indexOf("."))}(t),r="group"===n?"homeassistant":n;switch(n){case"lock":s=a?"unlock":"lock";break;case"cover":s=a?"open_cover":"close_cover";break;default:s=a?"turn_on":"turn_off"}e.callService(r,s,{entity_id:t})})(e,t,pe.includes(e.states[t].state))}(this.hass,e.entity),fe("success"));break;case"call-service":{if(!e.service)return void fe("failure");const[t,a]=e.service.split(".",2);this.hass.callService(t,a,e.service_data),fe("success")}}}setConfig(e){this.config=e,this.config.template&&function(e,t,a,s=!0){e||(e=te().connection);let n={user:te().user.name,browser:oe,hash:location.hash.substr(1)||" ",...a.variables},r=a.template,i=a.entity_ids;e.subscribeMessage(e=>{if(s){let a=String(e.result);const s=/_\([^)]*\)/g;a=a.replace(s,e=>te().localize(e.substring(2,e.length-1))||e),t(a)}else t(e.result)},{type:"render_template",template:r,variables:n,entity_ids:i})}(null,e=>{this.templateLines=e.match(/<(?:li|div)(?:\s+(?:class|id)\s*=\s*"([^"]*)")*\s*>([^<]*)<\/(?:li|div)>/g).map(e=>e),this.requestUpdate()},{template:this.config.template,variables:{config:this.config},entity_ids:this.config.entity_ids})}getCardSize(){return 1}static get styles(){return Q`
+    `}_runClock(){let e,t;const a=new Date;let s=a.getHours().toString();const n=a.getHours(),r=(n+11)%12+1,i=a.getMinutes(),d=a.getSeconds(),o=Math.floor((60*r+i)/2),_=6*i,l=6*d;if(this.clock&&(this.shadowRoot.querySelector(".hour").style.transform=`rotate(${o}deg)`,this.shadowRoot.querySelector(".minute").style.transform=`rotate(${_}deg)`,this.shadowRoot.querySelector(".second").style.transform=`rotate(${l}deg)`),this.digitalClock&&!this.twelveHourVersion){const e=i.toString();if(t=s.length<2?"0"+s+":":s+":",this.digitalClockWithSeconds){t+=e.length<2?"0"+e+":":e+":";const a=d.toString();t+=a.length<2?"0"+a:a}else t+=e.length<2?"0"+e:e;this.shadowRoot.querySelector(".digitalClock").textContent=t}else if(this.digitalClock&&this.twelveHourVersion&&!this.period){e=a.getHours(),e%=12,e=e||12,s=e.toString();const n=i.toString();if(t=s.length<2?"0"+s+":":s+":",this.digitalClockWithSeconds){t+=n.length<2?"0"+n+":":n+":";const e=d.toString();t+=e.length<2?"0"+e:e}else t+=n.length<2?"0"+n:n;this.shadowRoot.querySelector(".digitalClock").textContent=t}else if(this.digitalClock&&this.twelveHourVersion&&this.period){var m=n>=12?"pm":"am";e=a.getHours(),e%=12,e=e||12,s=e.toString();const r=i.toString();if(t=s.length<2?"0"+s+":":s+":",this.digitalClockWithSeconds){t+=r.length<2?"0"+r+":":r+":";const e=d.toString();t+=e.length<2?"0"+e:e}else t+=r.length<2?"0"+r:r;t+=" "+m,this.shadowRoot.querySelector(".digitalClock").textContent=t}}_runDate(){const e=ye();e.locale(this.hass.language),this.shadowRoot.querySelector(".date").textContent=e.format(this.dateFormat)}updateSidebarSize(e){const t=this.shadowRoot.querySelector(".sidebar-inner");e.shadowRoot.querySelector("ch-header")||e.shadowRoot.querySelector("app-header"),be("sidebarOff");let a=Se();t&&(t.style.width=this.offsetWidth+"px",this.config.hideTopMenu?(t.style.height=`${window.innerHeight}px`,t.style.top="0px"):(t.style.height=`calc(${window.innerHeight}px - `+a+")",t.style.top=a))}firstUpdated(){ae(this);let e=ve();const t=this;setTimeout(()=>{t.updateSidebarSize(e),t._updateActiveMenu()},50),setTimeout(()=>{t.updateSidebarSize(e)},350),window.addEventListener("resize",function(){setTimeout(()=>{t.updateSidebarSize(e)},1)},!0),this.hassClock&&setTimeout(async()=>{try{const helpers=await window.loadCardHelpers();const cc={type:"clock",clock_style:"digital",clock_size:"large",show_seconds:!0,no_background:!0,face_style:"markers"};const ce=await helpers.createCardElement(cc);ce.hass=te();const slot=this.shadowRoot.querySelector(".hassClockSlot");if(slot){slot.appendChild(ce);ae(ce);const si_inner=this.shadowRoot.querySelector(".sidebar-inner");let si=0,iv=setInterval(()=>{if(ce&&ce.shadowRoot){window.clearInterval(iv);var st=document.createElement("style");st.innerHTML="ha-card{background:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;box-shadow:none!important;border:none!important;padding:0!important;margin:0!important;}";ce.shadowRoot.appendChild(st);if(si_inner)si_inner.classList.remove("loading")}else if(30===++si){window.clearInterval(iv);if(si_inner)si_inner.classList.remove("loading")}},150)}}catch(err){console.error("hassClock error:",err);const si_inner=this.shadowRoot.querySelector(".sidebar-inner");if(si_inner)si_inner.classList.remove("loading")}},50),this.bottomCard&&setTimeout(()=>{var e={type:this.bottomCard.type};if(we("firstUpdated","Bottom card: ",e=Object.assign({},e,this.bottomCard.cardOptions)),e&&"object"==typeof e&&e.type){let t=e.type;t=t.startsWith(this.CUSTOM_TYPE_PREFIX)?t.substr(this.CUSTOM_TYPE_PREFIX.length):`hui-${t}-card`;const a=document.createElement(t);if(a.setConfig(e),a.hass=te(),this.shadowRoot.querySelector(".bottom").appendChild(a),ae(a),this.bottomCard.cardStyle&&""!=this.bottomCard.cardStyle){let e=this.bottomCard.cardStyle,t=0,s=setInterval(function(){if(a&&a.shadowRoot){window.clearInterval(s);var n=document.createElement("style");n.innerHTML=e,a.shadowRoot.appendChild(n)}else 10===++t&&window.clearInterval(s)},100)}}else Te("firstUpdated","Bottom card config error!")},2)}_updateActiveMenu(){if(this.updateMenu){this.shadowRoot.querySelectorAll('ul.sidebarMenu li[data-type="navigate"]').forEach(e=>{e.classList.remove("active")});let e=this.shadowRoot.querySelector('ul.sidebarMenu li[data-path="'+document.location.pathname+'"]');e&&e.classList.add("active")}}_menuAction(e){if(e.target.dataset&&e.target.dataset.menuitem||e.target.parentNode.dataset&&e.target.parentNode.dataset.menuitem){const t=JSON.parse(e.target.dataset.menuitem||e.target.parentNode.dataset.menuitem);this._customAction(t)}}_customAction(e){switch(e.action){case"more-info":(e.entity||e.camera_image)&&re(e.entity?e.entity:e.camera_image);break;case"navigate":e.navigation_path&&function(e,t,a){void 0===a&&(a=!1),a?history.replaceState(null,"",t):history.pushState(null,"",t),Ye(window,"location-changed",{replace:a})}(window,e.navigation_path);break;case"url":e.url_path&&window.open(e.url_path);break;case"toggle":e.entity&&(!function(e,t){(function(e,t,a){void 0===a&&(a=!0);var s,n=function(e){return e.substr(0,e.indexOf("."))}(t),r="group"===n?"homeassistant":n;switch(n){case"lock":s=a?"unlock":"lock";break;case"cover":s=a?"open_cover":"close_cover";break;default:s=a?"turn_on":"turn_off"}e.callService(r,s,{entity_id:t})})(e,t,pe.includes(e.states[t].state))}(this.hass,e.entity),fe("success"));break;case"call-service":{if(!e.service)return void fe("failure");const[t,a]=e.service.split(".",2);this.hass.callService(t,a,e.service_data),fe("success")}}}setConfig(e){this.config=e,this.config.template&&function(e,t,a,s=!0){e||(e=te().connection);let n={user:te().user.name,browser:oe,hash:location.hash.substr(1)||" ",...a.variables},r=a.template,i=a.entity_ids;e.subscribeMessage(e=>{if(s){let a=String(e.result);const s=/_\([^)]*\)/g;a=a.replace(s,e=>te().localize(e.substring(2,e.length-1))||e),t(a)}else t(e.result)},{type:"render_template",template:r,variables:n,entity_ids:i})}(null,e=>{this.templateLines=e.match(/<(?:li|div)(?:\s+(?:class|id)\s*=\s*"([^"]*)")*\s*>([^<]*)<\/(?:li|div)>/g).map(e=>e),this.requestUpdate()},{template:this.config.template,variables:{config:this.config},entity_ids:this.config.entity_ids})}getCardSize(){return 1}static get styles(){return Q`
       :host {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: column;
-        // --face-color: #FFF;
-        // --face-border-color: #FFF;
-        // --clock-hands-color: #000;
-        // --clock-seconds-hand-color: #FF4B3E;
-        // --clock-middle-background: #FFF;
-        // --clock-middle-border: #000;
-        // --sidebar-background: #FFF;
-        // --sidebar-text-color: #000;
-        // --sidebar-icon-color: #000;
-        // --sidebar-selected-text-color: #000;
-        // --sidebar-selected-icon-color: #000;
-        background-color:  var(--sidebar-background, var(--paper-listbox-background-color, var(--primary-background-color, #fff)));
+        --sidebar-background: var(--ha-card-background);
+        --sidebar-text-color: #ffffff;
+        --sidebar-icon-color: #ffffff;
+        --sidebar-selected-text-color: rgba(0, 0, 0, 0.9);
+        --sidebar-selected-icon-color: rgba(0, 0, 0, 0.9);
+        background-color: var(--sidebar-background, var(--paper-listbox-background-color, var(--primary-background-color, #fff)));
       }
       .sidebar-inner {
-        padding: 20px;
+        padding: 20px 16px;
+        border-radius: 22px;
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
         position: fixed;
         width: 0;
         overflow: hidden auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      .sidebar-inner::-webkit-scrollbar {
+        display: none;
+      }
+      .sidebar-inner.loading {
+        visibility: hidden;
+      }
+      .hassClockSlot {
+        text-align: center;
+        margin-bottom: 0px;
+      }
+      .date {
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.5px;
+        opacity: 0.7;
+        text-align: center;
+        color: #ffffff !important;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        padding: 0px;
       }
       .sidebarMenu {
         list-style: none;
-        margin: 20px 0;
-        padding: 20px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin: 12px 0 0 0;
+        padding: 12px 0 0 0;
+        border-top: 1px solid rgba(128, 128, 128, 0.5);
+        border-bottom: none;
+        width: 100%;
       }
       .sidebarMenu li {
-        color: var(--sidebar-text-color, #000);
+        color: var(--sidebar-text-color, #fff);
         position: relative;
-        padding: 10px 20px;
+        padding: 8px 16px;
         border-radius: 12px;
-        font-size: 18px;
-        line-height: 24px;
-        font-weight: 300;
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: 500;
         white-space: normal;
-        display: block;
+        margin-bottom: -4px;
         cursor: pointer;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        align-items: center;
       }
       .sidebarMenu li ha-icon {
-        float: right;
-        color: var(--sidebar-icon-color, #000);
+        color: var(--sidebar-icon-color, #fff);
+        --mdc-icon-size: 28px;
+        float: none;
+        margin-right: 0;
+        margin-left: 0;
+        padding-right: 16px;
       }
       .sidebarMenu li.active {
-        color: var(--sidebar-selected-text-color);
-      }
-      .sidebarMenu li.active ha-icon {
-        color: var(--sidebar-selected-icon-color, rgb(247, 217, 89));
+        background: rgba(255, 255, 255, 1.0);
+        color: var(--sidebar-selected-text-color, rgba(0, 0, 0, 0.9));
+        font-weight: 500;
       }
       .sidebarMenu li.active::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--sidebar-selected-icon-color, #000);
-        opacity: 0.12;
-        border-radius: 12px;
+        content: none;
+        display: none;
+      }
+      .sidebarMenu li.active ha-icon {
+        color: var(--sidebar-selected-icon-color, rgba(0, 0, 0, 0.9));
+      }
+      .sidebarMenu li[data-type="none"] {
+        border-top: 1px solid rgba(128, 128, 128, 0.5);
+        border-bottom: none;
+        border-radius: 0;
+        margin-top: 12px;
+        margin-bottom: 12px;
+        padding: 0;
+        height: 0;
+        min-height: 0;
+        overflow: hidden;
+        line-height: 0;
+        font-size: 0;
+      }
+      .sidebarMenu li:last-child {
+        border-bottom: none;
+      }
+      .sidebarMenu::after {
+        display: none;
       }
       h1 {
         margin-top: 0;
@@ -533,7 +581,7 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         font-size: 32px;
         line-height: 32px;
         font-weight: 200;
-        color: var(--sidebar-text-color, #000);
+        color: var(--sidebar-text-color, #fff);
         cursor: default;
       }
       h1.digitalClock {
@@ -555,16 +603,15 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         font-size: 26px;
         line-height: 26px;
         font-weight: 200;
-        color: var(--sidebar-text-color, #000);
+        color: var(--sidebar-text-color, #fff);
         cursor: default;
       }
       .template {
         margin: 0;
         padding: 0;
         list-style: none;
-        color: var(--sidebar-text-color, #000);
+        color: var(--sidebar-text-color, #fff);
       }
-
       .template li {
         display: block;
         color: inherit;
@@ -573,7 +620,6 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         font-weight: 300;
         white-space: normal;
       }
-
       .clock {
         margin: 20px 0;
         position: relative;
@@ -585,7 +631,6 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         border: 5px solid var(--face-border-color, #fff);
         box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
       }
-
       .clock .wrap {
         overflow: hidden;
         position: absolute;
@@ -595,7 +640,6 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         height: 100%;
         border-radius: 100%;
       }
-
       .clock .minute,
       .clock .hour {
         position: absolute;
@@ -612,7 +656,6 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
         z-index: 1;
       }
-
       .clock .minute {
         position: absolute;
         height: 41%;
@@ -622,7 +665,6 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
         transform: rotate(90deg);
       }
-
       .clock .second {
         position: absolute;
         top: -48%;
@@ -638,7 +680,6 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         transform: rotate(180deg);
         z-index: 1;
       }
-
       .clock .dot {
         position: absolute;
         top: 0;
@@ -654,7 +695,6 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         margin: auto;
         z-index: 1;
       }
-
       .bottom {
         display: flex;
         margin-top: auto;
