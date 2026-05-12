@@ -23,6 +23,8 @@ const DEFAULT_CONFIG = {
   breakpoints: { mobile: 768, tablet: 1024 },
   date: true,
   dateFormat: 'dddd, D. MMMM YYYY',
+  // clockAction: { action: 'navigate', navigation_path: '/dashboard-home' }, // optional: make clock clickable
+  // dateAction: { action: 'navigate', navigation_path: '/dashboard-home' },  // optional: make date clickable
   template: '',
   updateMenu: true,
   sidebarMenu: [

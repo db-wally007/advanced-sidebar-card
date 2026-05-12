@@ -418,12 +418,12 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
 
       <div class="sidebar-inner${this.hassClock?' loading':''}">
         ${this.hassClock?F`
-              <div class="hassClockSlot"></div>
+              <div class="hassClockSlot${this.config.clockAction?' clickable':''}" @click="${()=>this.config.clockAction&&this._customAction(this.config.clockAction)}"></div>
               ${this.date?F`
-                <h2 class="date"></h2>
+                <h2 class="date${this.config.dateAction?' clickable':''}" @click="${()=>this.config.dateAction&&this._customAction(this.config.dateAction)}"></h2>
               `:F``}
             `:F`${this.digitalClock?F`
-              <h1 class="digitalClock${t?" with-title":""}${this.digitalClockWithSeconds?" with-seconds":""}"></h1>
+              <h1 class="digitalClock${t?" with-title":""}${this.digitalClockWithSeconds?" with-seconds":""}${this.config.clockAction?' clickable':''}" @click="${()=>this.config.clockAction&&this._customAction(this.config.clockAction)}"></h1>
             `:F``}
         ${this.clock?F`
               <div class="clock">
@@ -439,7 +439,7 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
               <h1 class="title">${t}</h1>
             `:F``}
         ${this.date?F`
-              <h2 class="date"></h2>
+              <h2 class="date${this.config.dateAction?' clickable':''}" @click="${()=>this.config.dateAction&&this._customAction(this.config.dateAction)}"></h2>
             `:F``}`}
         ${e&&e.length>0?F`
               <ul class="sidebarMenu">
@@ -511,6 +511,11 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
         margin-bottom: 0px;
         margin-top: 0px;
         padding: 0px;
+      }
+      .hassClockSlot.clickable,
+      .digitalClock.clickable,
+      .date.clickable {
+        cursor: pointer;
       }
       .sidebarMenu {
         list-style: none;
