@@ -516,6 +516,20 @@ s.defineLocale("zh-tw",{months:"一月_二月_三月_四月_五月_六月_七月
       .digitalClock.clickable,
       .date.clickable {
         cursor: pointer;
+        touch-action: manipulation;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      .hassClockSlot.clickable {
+        position: relative;
+      }
+      .hassClockSlot.clickable::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
       }
       .sidebarMenu {
         list-style: none;
