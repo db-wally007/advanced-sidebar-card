@@ -1,5 +1,5 @@
 /**
- * ha-splash.js  v17
+ * ha-splash.js  v18
  *
  * Central transition handler — four layers:
  *   1. Initial load    — hide page until sidebar+clock are ready, then
@@ -205,7 +205,15 @@
       setTimeout(finish, SIDEBAR_SLIDE_MS + 300);
       return SIDEBAR_SLIDE_MS;
     }
-    /* out of one: in from the left, the content fading in as it lands */
+    /* out of one: in from the left, the content fading in as it lands. Measured again first:
+       a resize while it was hidden (a tablet's screen waking) measured it as 0 px wide, and its
+       inner box kept that - the clock and menu squeezed into a sliver (fixed in sidebar-card too,
+       which no longer measures itself while hidden; this also catches a window that changed). */
+    var card = sidebar.querySelector('sidebar-card');
+    var root = getHuiRoot();
+    if (card && root && typeof card.updateSidebarSize === 'function') {
+      try { card.updateSidebarSize(root); } catch (e) { /* an older sidebar-card */ }
+    }
     sidebar.animate(
       [{ transform: 'translateX(' + -w + 'px)', opacity: 0 }, { transform: 'none', opacity: 1 }],
       { duration: SIDEBAR_SLIDE_MS, easing: 'cubic-bezier(.32,.72,0,1)' });
@@ -423,5 +431,5 @@
     });
   }, 500);
 
-  console.info('[ha-splash] v17 loaded – managed dashboards:', MANAGED_DASHBOARDS.join(', '));
+  console.info('[ha-splash] v18 loaded – managed dashboards:', MANAGED_DASHBOARDS.join(', '));
 })();
