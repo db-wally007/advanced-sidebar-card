@@ -1,6 +1,6 @@
 {
   "name": "advanced-sidebar-card",
-  "version": "0.1.9.8.1",
+  "version": "0.1.9.8.2",
   "description": "Custom Sidebar Card for Home Assistant",
   "main": "advanced-sidebar-card.js",
   "scripts": {

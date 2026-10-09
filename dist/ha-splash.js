@@ -1,5 +1,5 @@
 /**
- * ha-splash.js  v18
+ * ha-splash.js  v19
  *
  * Central transition handler — four layers:
  *   1. Initial load    — hide page until sidebar+clock are ready, then
@@ -14,6 +14,11 @@
  *                         full-screen view) slides it out to the left on the way in and
  *                         back in from the left on the way out, instead of it vanishing
  *                         and reappearing at once.
+ *   5. View background — sidebar-card makes #view the scroller; a view's own background
+ *                         (Home Assistant's hui-view-background, absolutely positioned in
+ *                         it) is one screen high and scrolls away with the content, so a
+ *                         long view showed the page's colour below it. #view takes the
+ *                         view's colour itself: a scroller's background does not scroll.
  *
  * Back / Forward (and Android's back) move Home Assistant WITHOUT its location-changed
  * event, which both this file and sidebar-card's hideOnPath listen to - no fade, and a
@@ -162,6 +167,26 @@
     return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   }
 
+  /* ────────────────── 5. view background ──────────────────────── */
+
+  /* The view's own background colour (its hui-view-background, a child of #view) on #view
+     itself - only where #view is the scroller (the
+     sidebar dashboards; elsewhere the page scrolls and the view's background covers it) and
+     only a plain colour (an image stays the view's own, which would be painted over).
+     Looked at again as the new view renders. */
+  function paintViewBg() {
+    var view = getViewEl();
+    if (!view) return;
+    var scrolls = /auto|scroll/.test(getComputedStyle(view).overflowY);
+    var bg = view.querySelector('hui-view-background');
+    var cs = bg && getComputedStyle(bg);
+    var plain = cs && cs.backgroundImage === 'none' && cs.backgroundColor !== 'rgba(0, 0, 0, 0)';
+    view.style.backgroundColor = scrolls && plain ? cs.backgroundColor : '';
+  }
+  function paintViewBgSoon() {
+    [0, 300, 1200].forEach(function (ms) { setTimeout(paintViewBg, ms); });
+  }
+
   /* ────────────────── 4. sidebar slide ────────────────────────── */
 
   /* Whether the sidebar was hidden after the last navigation (null: no sidebar here). */
@@ -234,6 +259,7 @@
   waitForSidebar(function () {
     clearTimeout(safetyTimer);
     noteSidebar();
+    paintViewBgSoon();
 
     if (STAGGER_OFFSET_MS <= 0) {
       /* No stagger — fade entire page at once */
@@ -329,6 +355,7 @@
    */
   function staggerReveal() {
     noteSidebar();
+    paintViewBgSoon();
     if (STAGGER_OFFSET_MS <= 0) { hideOv(); return; }
     var sidebar = getSidebarEl();
     var view    = getViewEl();
@@ -390,6 +417,8 @@
       /* ── hash-only change (popup open/close) — do nothing ──── */
       if (hashOnly) return;
 
+      paintViewBgSoon();
+
       if (!dashChanged && pathChanged) {
         /* ── view switch within the same dashboard ─────────────── */
         // mobile-dashboard runs its own (slide) view transition via the
@@ -431,5 +460,5 @@
     });
   }, 500);
 
-  console.info('[ha-splash] v18 loaded – managed dashboards:', MANAGED_DASHBOARDS.join(', '));
+  console.info('[ha-splash] v19 loaded – managed dashboards:', MANAGED_DASHBOARDS.join(', '));
 })();
