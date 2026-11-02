@@ -1,5 +1,5 @@
 /**
- * ha-splash.js  v19
+ * ha-splash.js  v20
  *
  * Central transition handler — four layers:
  *   1. Initial load    — hide page until sidebar+clock are ready, then
@@ -38,7 +38,7 @@
    *    Example: ['tablet-dashboard', 'mobile-dashboard']
    *    Set to empty array [] to disable overlay transitions entirely.
    */
-  var MANAGED_DASHBOARDS = ['tablet-dashboard', 'dashboard-clock2', 'mobile-dashboard'];
+  var MANAGED_DASHBOARDS = ['tablet-dashboard', 'dashboard-clock', 'mobile-dashboard'];
 
   /*  FADE_MS
    *    Duration (ms) of the main page/overlay fade-in/out animation.
@@ -460,5 +460,5 @@
     });
   }, 500);
 
-  console.info('[ha-splash] v19 loaded – managed dashboards:', MANAGED_DASHBOARDS.join(', '));
+  console.info('[ha-splash] v20 loaded – managed dashboards:', MANAGED_DASHBOARDS.join(', '));
 })();
